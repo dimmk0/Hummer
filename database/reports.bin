@@ -1,0 +1,34 @@
+(lp0
+(ibugreport
+BugReport
+p1
+(dp2
+S'descripotion'
+p3
+S'desc 1'
+p4
+sS'title'
+p5
+S'title 1'
+p6
+sba(ibugreport
+BugReport
+p7
+(dp8
+g3
+S'title 2'
+p9
+sg5
+S'title 2'
+p10
+sba(ibugreport
+BugReport
+p11
+(dp12
+g3
+S'desc 3'
+p13
+sg5
+S'title 3'
+p14
+sba.
