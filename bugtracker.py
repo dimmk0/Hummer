@@ -1,22 +1,35 @@
 import pickle
 from  bugreport import BugReport
  
+REPORTS_PATH = "./database"
+
 class BugTracker:
     bug_reports = []
+    #current_report BugReport
+
     def __init__(self):
-        #reports_file = open("database/reports.txt","r")
-        pass
+        self.load_reports()
 
     def create_new_report(self):
-        #reports_file = open("database/reports.txt","w")
 
         report_title = raw_input("Please, enter bugreport title:")
         report_desc = raw_input("Please, enter bugreport description:")
    
-        report = BugReport(report_title,report_desc)
-        self.bug_reports.append(report)
+        self.current_report = BugReport(report_title,report_desc)
+        self.bug_reports.append(self.current_report)
         
+        save_reports()
     
+    def load_reports(self):
+        with open(REPORTS_PATH+"/reports.bin", "rb") as f:
+            self.bug_reports = pickle.load(f)
+
+    def save_reports(self):
+        with open(REPORTS_PATH+"/reports.bin", "wb") as f:
+            pickle.dump(self.bug_reports,f)
+        
+    def select_report(self):
+        pass    
     def search_reports(self):
         pass
     def list_reports(self):
