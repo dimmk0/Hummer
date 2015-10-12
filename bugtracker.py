@@ -8,17 +8,18 @@ class BugTracker:
     #current_report BugReport
 
     def __init__(self):
+        pass
         self.load_reports()
 
     def create_new_report(self):
 
-        report_title = raw_input("Please, enter bugreport title:")
-        report_desc = raw_input("Please, enter bugreport description:")
+#        report_title = raw_input("Please, enter bugreport title:")
+#        report_desc = raw_input("Please, enter bugreport description:")
    
-        self.current_report = BugReport(report_title,report_desc)
+        self.current_report = BugReport(5)
         self.bug_reports.append(self.current_report)
         
-        save_reports()
+        self.save_reports()
     
     def load_reports(self):
         with open(REPORTS_PATH+"/reports.bin", "rb") as f:
@@ -34,4 +35,5 @@ class BugTracker:
         pass
     def list_reports(self):
         for report in self.bug_reports:
-            print(report.bug_id,"\t",report.title)
+            print(report.report_id,"	",report.title,report.description)
+
