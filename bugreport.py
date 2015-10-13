@@ -64,5 +64,5 @@ class BugReport:
     def add_comment(self):
         pass
 
-
-report_status_list = ['Open','Assigned','Fixed','Verified']
+""" List of possible bug statuses """
+report_status_list = ['Open','Assigned','Fixed','Verified','Closed']
