@@ -16,7 +16,7 @@ class BugTracker:
 #        report_title = raw_input("Please, enter bugreport title:")
 #        report_desc = raw_input("Please, enter bugreport description:")
    
-        self.current_report = BugReport(5)
+        self.current_report = BugReport("dimm",self.get_next_report_id())
         self.bug_reports.append(self.current_report)
         
         self.save_reports()
@@ -35,5 +35,11 @@ class BugTracker:
         pass
     def list_reports(self):
         for report in self.bug_reports:
-            print(report.report_id,"	",report.title,report.description)
+            print report.report_id,"	",report.title,report.description
+    def get_next_report_id(self):
+        max_report_id = 0
+        for report in self.bug_reports:
+            if report.report_id > max_report_id:
+                max_report_id = report.report_id
+        return max_report_id+1
 
