@@ -35,8 +35,11 @@ class BugTracker:
     def list_reports(self):
         """listing of all existing reports in database"""
         for report in self.bug_reports:
-            print report.report_id,"	",report.title,report.description
-    
+            print "_____________________________________________________"    
+            print " ",report.report_id,"    ",report.title
+            print "_____________________________________________________"    
+            print report.description
+            print "_____________________________________________________"    
     def get_next_report_id(self):
         """Get next available report id"""
         max_report_id = 0
