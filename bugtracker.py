@@ -11,7 +11,7 @@ class BugTracker:
         self.load_reports()
 
     def create_new_report(self):
-        """New incstance of BugReport created and daved to database"""
+        """New incstance of BugReport created and saved to database"""
         self.current_report = BugReport("dimm",self.get_next_report_id())
         self.bug_reports.append(self.current_report)
         

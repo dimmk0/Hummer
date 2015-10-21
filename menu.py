@@ -8,8 +8,7 @@ class Menu:
                    1: self.show_reports,
                    2: self.search_reports,
                    3: self.add_report,
-                   4: self.edit_report,
-                   5: self.quit
+                   4: self.quit 
                    }
     def display_menu(self):
         print("""
@@ -20,8 +19,7 @@ class Menu:
 1. Show all bugreports.
 2. Search bugreports.
 3. Add bugreport.
-4. Modify bugreport
-5. Quit
+4. Quit
 """)
    
     def run(self):
@@ -29,7 +27,7 @@ class Menu:
             self.display_menu()
             choise = input("Enter an option: ")
             action = self.choises.get(choise)
-            print action
+            #print action
             if action:
                  action()
             else:
@@ -38,9 +36,9 @@ class Menu:
     def show_reports(self):
         self.BT.list_reports() 
     def search_reports(self):
-        pass
+        self.BT.search_reports()
     def add_report(self):
-        pass
+        self.BT.create_new_report()
     def edit_report(self):
         pass
     def quit(self):
