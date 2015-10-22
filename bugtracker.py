@@ -8,11 +8,16 @@ class BugTracker:
     #current_report BugReport
 
     def __init__(self):
+        self.username = raw_input("Please enter registered user name:")
+        if not self.validate_user(self.username):
+            raise ValueError("User %s is not allowed to use Hummer" % value)
+        
+        
         self.load_reports()
 
     def create_new_report(self):
         """New incstance of BugReport created and saved to database"""
-        self.current_report = BugReport("dimm",self.get_next_report_id())
+        self.current_report = BugReport(self.username,self.get_next_report_id())
         self.bug_reports.append(self.current_report)
         
         self.save_reports()
@@ -47,4 +52,12 @@ class BugTracker:
             if report.report_id > max_report_id:
                 max_report_id = report.report_id
         return max_report_id+1
+    def validate_user(self,user):
+        """Check if user presented in list of regitered users"""
+        with open(REPORTS_PATH+"/users", "r") as f:
+            users = f.read().splitlines()
+        if user in users:
+            return True
+        else:
+            return False
 

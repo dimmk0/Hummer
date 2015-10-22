@@ -74,4 +74,40 @@ S'Open'
 p27
 sg11
 I6
+sba(ibugreport
+BugReport
+p28
+(dp29
+g3
+S'Title New'
+p30
+sg5
+S'dimm'
+p31
+sg7
+S'Welcome to the LearnPython.org interactive Python tutorial.\n\nWhether you are an experienced programmer or not, this website is intended for everyone who wishes to learn the Python programming language.\n\nYou are welcome to join our group on Facebook for questions, discussions and updates.\n\nJust click on the chapter you wish to begin from, and follow the instructions. Good luck!\n'
+p32
+sg9
+S'Open'
+p33
+sg11
+I7
+sba(ibugreport
+BugReport
+p34
+(dp35
+g3
+S' Python Identity Operators'
+p36
+sg5
+S'dimmko'
+p37
+sg7
+S'Identity operators compare the memory locations of two objects. There are two Identity operators explained below:\n'
+p38
+sg9
+S'Open'
+p39
+sg11
+I8
 sba.
