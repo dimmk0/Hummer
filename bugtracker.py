@@ -5,7 +5,7 @@ REPORTS_PATH = "./database"
 
 class BugTracker:
     bug_reports = []
-    #current_report BugReport
+    #current_report = 0
 
     def __init__(self):
         self.username = raw_input("Please enter registered user name:")
@@ -32,9 +32,19 @@ class BugTracker:
         with open(REPORTS_PATH+"/reports.bin", "wb") as f:
             pickle.dump(self.bug_reports,f)
         
-#    def select_report(self):
-#        """select some particular report to review and edit it"""
-#        pass    
+    def select_report(self,report_id):
+        """select some particular report to review and edit it"""
+        current_report = 0
+        for report in self.bug_reports:
+            if report.report_id == report_id:
+                current_report = report
+
+        if current_report <> 0:
+            return current_report
+        else:
+            print ("Report with id: ",report_id, " not found.")
+            return current_report
+
     def search_reports(self):
         pass
     def list_reports(self):

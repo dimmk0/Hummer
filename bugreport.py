@@ -63,6 +63,16 @@ class BugReport:
     """Add comment"""
     def add_comment(self):
         pass
+    def show_report(self):
+        print('_'*100)
+        print(self.title)
+        print('_'*100)
+        print("Opened by:",self.opened_by,"	Opened at: ",self.time_open)
+        print("Assigned to: ", self.assigned_to,"	Staus: ",self.report_status )
+        print('_'*100)
+        print(self.description)
+        print('_'*100)
+        print('_'*100)
 
 """ List of possible bug statuses """
 report_status_list = ['Open','Assigned','Fixed','Verified','Closed']
