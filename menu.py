@@ -8,7 +8,8 @@ class Menu:
                    1: self.show_reports,
                    2: self.search_reports,
                    3: self.add_report,
-                   4: self.quit 
+                   4: self.show_report,
+                   5: self.quit 
                    }
     def display_menu(self):
         print("""
@@ -19,7 +20,8 @@ class Menu:
 1. Show all bugreports.
 2. Search bugreports.
 3. Add bugreport.
-4. Quit
+4. Show report.
+5. Quit
 """)
    
     def run(self):
@@ -41,6 +43,19 @@ class Menu:
         self.BT.create_new_report()
     def edit_report(self):
         pass
+    def show_report(self):
+        report_id = input("Enter Report Id: ")
+        try:
+            report_id = int(report_id)
+        except ValueError:
+            print("That's not a valid report id!")
+        
+        report = self.BT.select_report(report_id)
+        if report != 0: 
+            report.show_report()
+        else:
+            print("No valid report found.")
+
     def quit(self):
         print("Thank you for using Hummer!")
         sys.exit(0) 

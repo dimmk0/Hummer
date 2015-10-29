@@ -1,4 +1,5 @@
 import pickle
+import sys
 from  bugreport import BugReport
  
 REPORTS_PATH = "./database"
@@ -10,8 +11,8 @@ class BugTracker:
     def __init__(self):
         self.username = raw_input("Please enter registered user name:")
         if not self.validate_user(self.username):
-            raise ValueError("User %s is not allowed to use Hummer" % value)
-        
+            print("User %s is not allowed to use Hummer" % self.username)
+            sys.exit()
         
         self.load_reports()
 
@@ -36,6 +37,7 @@ class BugTracker:
         """select some particular report to review and edit it"""
         current_report = 0
         for report in self.bug_reports:
+            print("Check report %s" % report.report_id)
             if report.report_id == report_id:
                 current_report = report
 
@@ -43,7 +45,7 @@ class BugTracker:
             return current_report
         else:
             print ("Report with id: ",report_id, " not found.")
-            return current_report
+            return 0 
 
     def search_reports(self):
         pass
