@@ -1,5 +1,5 @@
 from datetime import datetime
-import sys, tempfile, os
+import sys, tempfile, os, textwrap
 from subprocess import call
 
 EDITOR = os.environ.get('EDITOR','vim')
@@ -9,9 +9,7 @@ class BugReport:
     report_id = 0
     title = ''
     description = ''
-    time_open = 0
     report_status = 'none'
-    opened_by = 'nobody'
     time_fixed = 0
     assigned_to = ''
   
@@ -21,8 +19,8 @@ class BugReport:
         self.set_title()
         self.set_description()
         self.report_status = report_status_list[0]
-        time_open = datetime.now()
-        opened_by = opened_by_user 
+        self.time_open = datetime.now()
+        self.opened_by = opened_by_user 
         self.assign_to(opened_by_user)
  
     """Set current bug report status"""   
@@ -64,13 +62,14 @@ class BugReport:
     def add_comment(self):
         pass
     def show_report(self):
+        os.system('cls') 
         print('_'*100)
         print(self.title)
         print('_'*100)
-        print("Opened by:",self.opened_by,"	Opened at: ",self.time_open)
-        print("Assigned to: ", self.assigned_to,"	Staus: ",self.report_status )
+        print('Opened by: %s	Opened at: %s' % (self.opened_by,self.time_open))
+        print('Assigned to: %s	Staus: %s' % (self.assigned_to,self.report_status) )
         print('_'*100)
-        print(self.description)
+        print(textwrap.fill(self.description,100))
         print('_'*100)
         print('_'*100)
 

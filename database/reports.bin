@@ -3,111 +3,59 @@
 BugReport
 p1
 (dp2
-S'title'
+S'description'
 p3
-S'Title I'
+S'>>> x = int(raw_input("Please enter an integer: "))\nPlease enter an integer: 42\n>>> if x < 0:\n...     x = 0\n...     print \'Negative changed to zero\'\n... elif x == 0:\n...     print \'Zero\'\n... elif x == 1:\n...     print \'Single\'\n... else:\n...     print \'More\'\n...\nMore\n'
 p4
-sS'assigned_to'
+sS'title'
 p5
-S'dimm'
+S'Bugreport I'
 p6
-sS'description'
+sS'assigned_to'
 p7
-S'--------------------------\nDesc\n==========================\n\n\n'
+S'dimmko'
 p8
 sS'report_status'
 p9
 S'Open'
 p10
-sS'report_id'
+sS'opened_by'
 p11
-I5
+g8
+sS'time_open'
+p12
+cdatetime
+datetime
+p13
+(S'\x07\xdf\x0b\x04\t-4\x01r\xa2'
+p14
+tp15
+Rp16
+sS'report_id'
+p17
+I1
 sba(ibugreport
 BugReport
-p12
-(dp13
+p18
+(dp19
 g3
-S'Title II'
-p14
+S' compound statement consists of one or more .clauses.. A clause consists of a header and a .suite.. The clause headers of a particular compound statement are all at the same indentation level. Each clause header begins with a uniquely identifying keyword and ends with a colon. A suite is a group of statements controlled by a clause. A suite can be one or more semicolon-separated simple statements on the same line as the header, following the header.s colon, or it can be one or more indented statements on subsequent lines. Only the latter form of a suite can contain nested compound statements; the following is illegal, mostly because it wouldn.t be clear to which if clause a following else clause would belong:\n'
+p20
 sg5
-g6
+S'Bugreport II'
+p21
 sg7
-S'########################################################\n===== DESC II\n########################################################\n'
-p15
+g8
 sg9
 g10
 sg11
-I5
-sba(ibugreport
-BugReport
-p16
-(dp17
-g3
-S' Title III'
-p18
-sg5
-S'dimm'
-p19
-sg7
-S'-------------------------------------------\n Should have report id = 6\n==========================================\n'
-p20
-sg9
-S'Open'
-p21
-sg11
-I5
-sba(ibugreport
-BugReport
+g8
+sg12
+g13
+(S'\x07\xdf\x0b\x04\t.4\x0eo\xc7'
 p22
-(dp23
-g3
-S'TTT IIII'
-p24
-sg5
-S'dimm'
-p25
-sg7
-S'===================================\nThis time really id = 6 \n===================================\n\n-----------------------------------\n'
-p26
-sg9
-S'Open'
-p27
-sg11
-I6
-sba(ibugreport
-BugReport
-p28
-(dp29
-g3
-S'Title New'
-p30
-sg5
-S'dimm'
-p31
-sg7
-S'Welcome to the LearnPython.org interactive Python tutorial.\n\nWhether you are an experienced programmer or not, this website is intended for everyone who wishes to learn the Python programming language.\n\nYou are welcome to join our group on Facebook for questions, discussions and updates.\n\nJust click on the chapter you wish to begin from, and follow the instructions. Good luck!\n'
-p32
-sg9
-S'Open'
-p33
-sg11
-I7
-sba(ibugreport
-BugReport
-p34
-(dp35
-g3
-S' Python Identity Operators'
-p36
-sg5
-S'dimmko'
-p37
-sg7
-S'Identity operators compare the memory locations of two objects. There are two Identity operators explained below:\n'
-p38
-sg9
-S'Open'
-p39
-sg11
-I8
+tp23
+Rp24
+sg17
+I2
 sba.

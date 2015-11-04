@@ -1,5 +1,6 @@
 import pickle
 import sys
+import os
 from  bugreport import BugReport
  
 REPORTS_PATH = "./database"
@@ -26,7 +27,10 @@ class BugTracker:
     def load_reports(self):
         """Load whole report list from database"""
         with open(REPORTS_PATH+"/reports.bin", "rb") as f:
-            self.bug_reports = pickle.load(f)
+            if  os.stat(REPORTS_PATH+"/reports.bin").st_size > 10:
+                self.bug_reports = pickle.load(f)
+            else:
+                print (REPORTS_PATH+"/reports.bin is empty, no reports loaded")
 
     def save_reports(self):
         """Save whole report list to database"""
@@ -52,11 +56,9 @@ class BugTracker:
     def list_reports(self):
         """listing of all existing reports in database"""
         for report in self.bug_reports:
-            print "_____________________________________________________"    
-            print " ",report.report_id,"    ",report.title
-            print "_____________________________________________________"    
-            print report.description
-            print "_____________________________________________________"    
+            print ('_'*100)    
+            print ("%s  %s  %s  %s  %s  %s" % (report.report_id,report.title, report.opened_by, report.assigned_to, report.report_status,report.time_open))
+            print ('_'*100)    
     def get_next_report_id(self):
         """Get next available report id"""
         max_report_id = 0
